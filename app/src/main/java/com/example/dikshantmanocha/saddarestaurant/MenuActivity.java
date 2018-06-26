@@ -28,7 +28,14 @@ import com.example.dikshantmanocha.saddarestaurant.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import fragments.Bevarages;
+import fragments.Breads;
 import fragments.Desserts;
+import fragments.NonVegMainCourse;
+import fragments.NonVegStarters;
+import fragments.Snacks;
+import fragments.VegMainCourse;
+import fragments.VegStarters;
 
 @SuppressLint("ValidFragment")
 public class MenuActivity extends AppCompatActivity {
@@ -74,12 +81,14 @@ public class MenuActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Desserts(), "ONE");
-        adapter.addFragment(new Desserts(), "TWO");
-        adapter.addFragment(new Desserts(), "THREE");
-        adapter.addFragment(new Desserts(), "FOUR");
-        adapter.addFragment(new Desserts(), "FIVE");
-        adapter.addFragment(new Desserts(), "SIX");
+        adapter.addFragment(new VegStarters(), "Veg Starters");
+        adapter.addFragment(new NonVegStarters(), "Non-Veg Starters");
+        adapter.addFragment(new VegMainCourse(), "Veg Main Course");
+        adapter.addFragment(new NonVegMainCourse(), "Non-Veg Main Course");
+        adapter.addFragment(new Breads(), "Breads");
+        adapter.addFragment(new Bevarages(), "Bevarages");
+        adapter.addFragment(new Desserts(), "Desserts");
+        adapter.addFragment(new Snacks(), "Snacks");
         viewPager.setAdapter(adapter);
     }
     class ViewPagerAdapter extends FragmentPagerAdapter {

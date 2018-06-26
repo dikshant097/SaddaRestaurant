@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        
+
 
          drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -86,7 +86,7 @@ public class HomeActivity extends AppCompatActivity
 
         }
         else if (id == R.id.nav_profile) {
-            Toast.makeText(this,"Profile", Toast.LENGTH_SHORT).show();
+           startActivity(new Intent(HomeActivity.this,LoginSignup.class));
         }
         else if (id == R.id.nav_cart) {
             Toast.makeText(this,"Cart", Toast.LENGTH_SHORT).show();
